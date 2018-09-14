@@ -81,3 +81,57 @@ const base64Decode = require('./')
 
   assert.strictEqual(actual.join(), expected.join())
 }
+
+{
+  const actual = new Uint8Array(4)
+  const expected = new Uint8Array([104, 105, 33, 33])
+
+  base64Decode('aGkhIQ==', actual)
+
+  assert.strictEqual(actual.join(), expected.join())
+}
+
+{
+  const actual = new Uint8Array(3)
+  const expected = new Uint8Array([97, 97, 97])
+
+  base64Decode('YWFh', actual)
+
+  assert.strictEqual(actual.join(), expected.join())
+}
+
+{
+  const actual = new Uint8Array(2)
+  const expected = new Uint8Array([104,105])
+
+  base64Decode('aGk=', actual)
+
+  assert.strictEqual(actual.join(), expected.join())
+}
+
+{
+  const actual = new Uint8Array(3)
+  const expected = new Uint8Array([104,105, 33])
+
+  base64Decode('aGkh', actual)
+
+  assert.strictEqual(actual.join(), expected.join())
+}
+
+{
+  const actual = new Uint8Array(3)
+  const expected = new Uint8Array([115,117,112])
+
+  base64Decode('c3Vw', actual)
+
+  assert.strictEqual(actual.join(), expected.join())
+}
+
+{
+  const actual = new Uint8Array(5)
+  const expected = new Uint8Array([115, 117, 112, 63, 33])
+
+  base64Decode('c3VwPyE=', actual)
+
+  assert.strictEqual(actual.join(), expected.join())
+}
