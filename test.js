@@ -135,3 +135,12 @@ const base64Decode = require('./')
 
   assert.strictEqual(actual.join(), expected.join())
 }
+
+{
+  const actual = new Uint8Array(26)
+  const expected = new Uint8Array([76,111,114,101,109,32,105,112,115,117,109,32,100,111,108,111,114,32,115,105,116,32,97,109,101,116])
+
+  base64Decode('TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQ=', actual)
+
+  assert.strictEqual(actual.join(), expected.join())
+}
