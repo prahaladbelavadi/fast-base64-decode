@@ -102,7 +102,7 @@ const base64Decode = require('./')
 
 {
   const actual = new Uint8Array(2)
-  const expected = new Uint8Array([104,105])
+  const expected = new Uint8Array([104, 105])
 
   base64Decode('aGk=', actual)
 
@@ -111,7 +111,7 @@ const base64Decode = require('./')
 
 {
   const actual = new Uint8Array(3)
-  const expected = new Uint8Array([104,105, 33])
+  const expected = new Uint8Array([104, 105, 33])
 
   base64Decode('aGkh', actual)
 
@@ -120,7 +120,7 @@ const base64Decode = require('./')
 
 {
   const actual = new Uint8Array(3)
-  const expected = new Uint8Array([115,117,112])
+  const expected = new Uint8Array([115, 117, 112])
 
   base64Decode('c3Vw', actual)
 
@@ -138,9 +138,63 @@ const base64Decode = require('./')
 
 {
   const actual = new Uint8Array(26)
-  const expected = new Uint8Array([76,111,114,101,109,32,105,112,115,117,109,32,100,111,108,111,114,32,115,105,116,32,97,109,101,116])
+  const expected = new Uint8Array([76, 111, 114, 101, 109, 32, 105, 112, 115, 117, 109, 32, 100, 111, 108, 111, 114, 32, 115, 105, 116, 32, 97, 109, 101, 116])
 
   base64Decode('TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQ=', actual)
+
+  assert.strictEqual(actual.join(), expected.join())
+}
+
+{
+  const actual = new Uint8Array(1)
+  const expected = new Uint8Array([102])
+
+  base64Decode('Zg==', actual)
+
+  assert.strictEqual(actual.join(), expected.join())
+}
+
+{
+  const actual = new Uint8Array(2)
+  const expected = new Uint8Array([102, 111])
+
+  base64Decode('Zm8=', actual)
+
+  assert.strictEqual(actual.join(), expected.join())
+}
+
+{
+  const actual = new Uint8Array(3)
+  const expected = new Uint8Array([102, 111, 111])
+
+  base64Decode('Zm9v', actual)
+
+  assert.strictEqual(actual.join(), expected.join())
+}
+
+{
+  const actual = new Uint8Array(4)
+  const expected = new Uint8Array([102, 111, 111, 98])
+
+  base64Decode('Zm9vYg==', actual)
+
+  assert.strictEqual(actual.join(), expected.join())
+}
+
+{
+  const actual = new Uint8Array(5)
+  const expected = new Uint8Array([102, 111, 111, 98, 97])
+
+  base64Decode('Zm9vYmE=', actual)
+
+  assert.strictEqual(actual.join(), expected.join())
+}
+
+{
+  const actual = new Uint8Array(6)
+  const expected = new Uint8Array([102, 111, 111, 98, 97, 114 ])
+
+  base64Decode('Zm9vYmFy', actual)
 
   assert.strictEqual(actual.join(), expected.join())
 }
