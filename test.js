@@ -217,4 +217,5 @@ const base64Decode = require('./')
   base64Decode(str, actual)
 
   assert.strictEqual(actual.join(), expected.join())
+  assert.strictEqual(str.length, 8)
 }
