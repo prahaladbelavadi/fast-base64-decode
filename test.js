@@ -198,7 +198,6 @@ const base64Decode = require('./')
 
   assert.strictEqual(actual.join(), expected.join())
 }
-<<<<<<< HEAD
 
 {
   var actual = new Uint8Array(64)
@@ -220,5 +219,3 @@ const base64Decode = require('./')
   assert.strictEqual(actual.join(), expected.join())
   assert.strictEqual(str.length, 8)
 }
-=======
->>>>>>> 3e67d9a608cb91db8b4ad708c0d99dd6bcab86a4
